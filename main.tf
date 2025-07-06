@@ -71,7 +71,7 @@ resource "libvirt_domain" "dhcp_server" {
   cloudinit = libvirt_cloudinit_disk.dhcp_server_cloudinit.id
 
   network_interface {
-    network_name = "default"
+    network_name = "gateway"
   }
 
   console {
@@ -100,7 +100,7 @@ resource "libvirt_domain" "dhcp_client" {
   cloudinit = libvirt_cloudinit_disk.dhcp_client_cloudinit.id
 
   network_interface {
-    network_name = "default"
+    network_name = "gateway"
   }
 
   console {
